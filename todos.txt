@@ -1,0 +1,21 @@
+
+
+
+
+gorgeous notebook
+place to share poetry + writing
+light / dark backgrounds using html5 canvas animation
+tagging system for notes
+autosaving text
+email exporting
+
+user
+  email
+  password
+  username
+
+note
+  userid
+  title
+  body
+  public
