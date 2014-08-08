@@ -1,6 +1,22 @@
 Lampwriter.Collections.Users = Backbone.Collection.extend({
   url: "users",
-  model: Lampwriter.Models.User
+  user: Lampwriter.Models.User,
+
+  getOrFetch: function (id){
+    var user;
+    var users = this;
+
+    if(user = this.get(id)){
+      user.fetch();
+      return user;
+    } else {
+      user = new Lampwriter.Models.User({ id: id });
+      user.fetch({
+        success: function(){ users.add(user) }
+      });
+      return user
+    }
+  }
 
 });
 

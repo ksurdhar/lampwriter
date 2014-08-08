@@ -15,6 +15,24 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  userIndex: function(){
+    Lampwriter.users.fetch();
+
+    var view = new Lampwriter.Views.usersIndex({
+      collection: Lampwriter.users
+    });
+    this._swapView(view);
+  },
+
+  userShow: function(id){
+    var user = Lampwriter.users.getOrFetch(id);
+
+    var view = new Lampwriter.Views.userShow({
+      model: user
+    });
+    this._swapView(view);
+  },
+
   _swapView: function(view){
     this.currentView && this.currentView.remove();
     this.currentView = view;
