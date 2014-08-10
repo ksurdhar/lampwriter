@@ -4,7 +4,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
-      render json: @note
+      render "notes/show"
     else
       render json: @note.errors.full_messages, status: 402
     end

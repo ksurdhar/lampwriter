@@ -3,7 +3,7 @@ Lampwriter.Models.User = Backbone.Model.extend({
 
   notes: function(){
     if(!this._notes){
-      this._notes = new Lampwriter.Collections.notes([],{
+      this._notes = new Lampwriter.Collections.Notes([],{
         user: this
       });
     }

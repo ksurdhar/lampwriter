@@ -1,13 +1,13 @@
-Lampwriter.Views.usersShow = Backbone.View.extend({
+Lampwriter.Views.notesShow = Backbone.View.extend({
 
-  template: JST['users/show'],
+  template: JST['notes/show'],
 
   initialize: function(options) {
     this.listenTo(this.model, "sync remove change", this.render);
   },
 
   render: function () {
-    var renderedContent = this.template({ user: this.model });
+    var renderedContent = this.template({ note: this.model });
     this.$el.html(renderedContent);
     return this;
   }
