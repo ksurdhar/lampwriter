@@ -1,0 +1,9 @@
+<h2>Notes Index</h2>
+
+<ul>
+  <% notes.each(function(note){ %>
+    <li>title: <%= note.get('title') %></li>
+  <% }); %>
+</ul>
+
+<a href="#/notes/new">New Note</a>

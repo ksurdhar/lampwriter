@@ -3,4 +3,5 @@ Lampwriter::Application.routes.draw do
   root to: "site#root"
 
   resources :users, only: [:index, :show], :defaults => { :format => :json }
+  resources :notes, :defaults => {:format => :json}
 end

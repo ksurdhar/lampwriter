@@ -6,8 +6,26 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
 
   routes: {
     "": "greetView",
-    "users": "userIndex",
-    "users/:id": "userShow"
+    "users": "usersIndex",
+    "users/:id": "usersShow",
+    "notes": "notesIndex",
+    "notes/new": "notesEdit",
+    "notes/:id": "notesShow",
+    "notes/:id/edit": "notesEdit"
+  },
+
+  notesIndex: function(){
+    Lampwriter.notes.fetch();
+
+    var view = new Lampwriter.Views.notesIndex({
+      collection: Lampwriter.notes
+    });
+    this._swapView(view);
+  },
+
+  notesEdit: function(){
+    var view = new Lampwriter.Views.notesNew();
+    this._swapView(view);
   },
 
   greetView: function(){
@@ -15,7 +33,7 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  userIndex: function(){
+  usersIndex: function(){
     Lampwriter.users.fetch();
 
     var view = new Lampwriter.Views.usersIndex({
@@ -24,7 +42,7 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  userShow: function(id){
+  usersShow: function(id){
     var user = Lampwriter.users.getOrFetch(id);
 
     var view = new Lampwriter.Views.userShow({
