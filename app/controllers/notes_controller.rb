@@ -28,7 +28,7 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id])
-    @note.update_attributes(relationship_params)
+    @note.update_attributes(note_params)
     render "notes/show"
   end
 

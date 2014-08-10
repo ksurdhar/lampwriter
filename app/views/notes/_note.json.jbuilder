@@ -1,1 +1,1 @@
-json.(note, :title, :body, :public)
+json.(note, :title, :body, :public, :id)

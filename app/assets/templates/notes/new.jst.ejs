@@ -1,16 +1,18 @@
-<h2>Create Note</h2>
-
+<h2><%= note ? "Edit" : "Create" %> Note</h2>
 <form>
   <label>
     Title
-    <input type="text" name="note[title]">
+    <input type="text" name="note[title]" value= "<%= note ? note.get('title') : '' %>" >
   </label>
   <label>
     Body
-    <input type="textarea" name="note[body]">
+    <input type="textarea" name="note[body]" value= "<%= note ? note.get('body') : '' %>" >
   </label>
+  <% if(note){ %>
+    <input type="hidden" name="id" value="<%= note.id %>">
+  <% }; %>
 
-  <input type="submit">
+  <button type="submit" class="btn"><%= note ? "Edit" : "Create" %></button>
 </form>
 
 <a href="#/">Back</a>

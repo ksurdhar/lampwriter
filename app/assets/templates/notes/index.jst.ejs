@@ -2,7 +2,7 @@
 
 <ul>
   <% notes.each(function(note){ %>
-    <li>title: <%= note.get('title') %></li>
+    <li>title: <a href="#/notes/<%= note.get('id') %>"><%= note.get('title') %></a></li>
   <% }); %>
 </ul>
 

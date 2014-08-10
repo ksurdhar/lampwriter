@@ -32,8 +32,10 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  notesEdit: function(){
-    var view = new Lampwriter.Views.notesNew();
+  notesEdit: function(id){
+    var view = new Lampwriter.Views.notesNew({
+      id: id
+    });
     this._swapView(view);
   },
 
