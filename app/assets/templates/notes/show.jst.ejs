@@ -1,7 +1,12 @@
-<div class="row">
-  <h2><%=note.get('title') %></h2>
-  <p><%=note.get('body') %></p>
-</div>
+<div id="show">
+  <div class="row">
+    <h2 id="title"><%=note.get('title') %></h2>
+    <p id="body"> <%=note.get('body') %></p>
+  </div>
 
-<a href="#/notes/<%=note.get('id')%>/edit">Edit</a>
-<a href="#/notes">Back</a>
+  <a href="#/notes">Back</a>
+  <% if(parseInt(global_user_id) == note.get('user_id') ){ %>
+    <a href="#/notes/<%=note.get('id')%>/edit">Edit</a>
+    <button id="delete" class="btn">Delete</button>
+  <% }; %>
+</div>

@@ -2,7 +2,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
-
+    @note.user_id = current_user.id
     if @note.save
       render "notes/show"
     else
@@ -11,7 +11,7 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
     @note.destroy
     render "notes/show"
   end
@@ -27,7 +27,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
     @note.update_attributes(note_params)
     render "notes/show"
   end

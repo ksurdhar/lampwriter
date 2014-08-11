@@ -11,12 +11,21 @@ Steps I take to add notes
 
 When you click on "new note" an note is created + saved and takes you to the edit view. There is no create view.
 
+
+show view
+  tags around title and body
+  double click on tags to replace them with forms
+
+
 gorgeous notebook
 place to share poetry + writing
 light / dark backgrounds using html5 canvas animation
 tagging system for notes
 autosaving text
 email exporting
+a dashboard that tracks info
+  number of page views
+  average time spent per note
 
 user
   email

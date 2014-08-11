@@ -2,12 +2,12 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
 
   template: JST["notes/new"],
 
-  events: {
-    "submit form": "submit"
-  },
-
   initialize: function(options) {
     options.id ? this.id = options.id : this.id = null;
+  },
+
+  events: {
+    "submit form": "submit"
   },
 
   render: function () {
@@ -38,17 +38,16 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
       note.save(params, {
         patch: true,
         success: function(params) {
-          // that._events.trigger("editNote", that.model);
-          Backbone.history.navigate("/notes", { trigger: true });
+          Backbone.history.navigate("/notes/"+note.id, { trigger: true });
         }
       });
     } 
     else{
-      var newNote = new Lampwriter.Models.Note(params["note"]);
+      var newNote = new Lampwriter.Models.Note(params);
       newNote.save({}, {
         success: function () {
           Lampwriter.notes.add(newNote);
-          Backbone.history.navigate("/notes", { trigger: true });
+          Backbone.history.navigate("/notes/"+newNote.id, { trigger: true });
         }
       });
     }
