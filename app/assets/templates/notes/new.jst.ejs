@@ -1,12 +1,17 @@
-<h2><%= note ? "Edit" : "Create" %> Note</h2>
-<form>
-  <input type="text" name="note[title]" placeholder="Title" value= "<%= note ? note.get('title') : '' %>" style="border: 0px solid #000000;">
-  <br>
-  <textarea name="note[body]" rows="8" cols="40" placeholder="Body" style="border: 0px solid #000000;"><%= note ? note.get('body') : '' %></textarea>
-  <% if(note){ %>
-    <input type="hidden" name="id" value="<%= note.id %>">
-  <% }; %>
-  <button type="submit" class="btn">Save</button>
-</form>
+<div class="container">
+  <div class="row">
+    <h2><%= note ? "Edit" : "Create" %> Note</h2>
+    
+    <form>
+      <input type="text" name="note[title]" placeholder="Title" value= "<%= note ? note.get('title') : '' %>" style="border: 0px solid #000000;">
+      <br>
+      <textarea name="note[body]" rows="8" cols="40" placeholder="Body" style="border: 0px solid #000000;"><%= note ? note.get('body') : '' %></textarea>
+      <% if(note){ %>
+        <input type="hidden" name="id" value="<%= note.id %>">
+      <% }; %>
+      <button type="submit" class="btn">Save</button>
+    </form>
 
-<a href="#/notes">Back</a>
+    <a href="#/notes">Back</a>
+  </div>
+</div>

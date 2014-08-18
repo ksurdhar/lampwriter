@@ -1,9 +1,13 @@
-<h2>Notes Index</h2>
+<div class="container">
+  <div class="row">
+    <h2>Notes Index</h2>
 
-<ul>
-  <% notes.each(function(note){ %>
-    <li>title: <a href="#/notes/<%= note.get('id') %>"><%= note.get('title') %></a></li>
-  <% }); %>
-</ul>
+    <ul>
+      <% notes.each(function(note){ %>
+        <li>title: <a href="#/notes/<%= note.get('id') %>"><%= note.get('title') %></a></li>
+      <% }); %>
+    </ul>
 
-<a href="#/notes/new">New Note</a>
+    <a href="#/notes/new">New Note</a>
+  </div>
+</div>

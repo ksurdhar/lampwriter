@@ -1,20 +1,7 @@
-Steps I take to add notes
-  generate migration, rake db:migrate
-  add relationships on the model level
-  generate controller
-  add resource routes
-  write controller actions
-  add jbuilder views, update dependent model views
-  add backbone model (rails generate backbone:scaffold Example --javascript)
-  modify backbone models + collections + dependencies
-  add backbone router routes + view + template
-
-When you click on "new note" an note is created + saved and takes you to the edit view. There is no create view.
+responsive design
+appropriate fonts
 
 
-show view
-  tags around title and body
-  double click on tags to replace them with forms
 
 
 gorgeous notebook
@@ -37,3 +24,15 @@ note
   title
   body
   public
+
+Steps I take to add a model:
+  generate migration, rake db:migrate
+  add relationships on the model level
+  generate controller
+  add resource routes
+  write controller actions
+  add jbuilder views, update dependent model views
+  add backbone model (rails generate backbone:scaffold Example --javascript)
+  modify backbone models + collections + dependencies
+  add backbone router routes + view + template
+

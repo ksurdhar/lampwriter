@@ -1,8 +1,10 @@
-<div class="row">
-  <h2>Index View</h2>
-  <ul>
-    <% users.each(function(user){ %>
-      <li>id: <%= user.get('id') %> email: <%= user.get('email') %></li>
-    <% }); %>
-  </ul>
+<div class="container">
+  <div class="row">
+    <h2>Index View</h2>
+    <ul>
+      <% users.each(function(user){ %>
+        <li>id: <%= user.get('id') %> email: <%= user.get('email') %></li>
+      <% }); %>
+    </ul>
+  </div>
 </div>
