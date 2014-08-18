@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.serializeJSON
 //= require jquery_ujs
+//= require jquery-color-2.1.2
 //= require bootstrap
 //= require turbolinks
 //= require underscore
@@ -24,3 +25,21 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+$(document).ready(function(){
+  var state = true;
+    $( "#toggler" ).click(function() {
+      if ( state ) {
+        $( "body" ).animate({
+          backgroundColor: "#2c3e50",
+          color: "#fff",
+        }, 1000 );
+      } else {
+        $( "body" ).animate({
+          backgroundColor: "#FFFFF0",
+          color: "#000",
+        }, 1000 );
+      }
+      state = !state;
+    });
+});

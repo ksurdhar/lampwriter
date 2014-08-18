@@ -2,11 +2,11 @@
   <div class="row">
     <h2 id="title"><%=note.get('title') %></h2>
     <p id="body"> <%=note.get('body') %></p>
+    <br>
+    <a href="#/notes">Back</a>
+    <% if(parseInt(global_user_id) == note.get('user_id') ){ %>
+      <a href="#/notes/<%=note.get('id')%>/edit">Edit</a>
+      <button id="delete" class="btn btn-danger">Delete</button>
+    <% }; %>
   </div>
-
-  <a href="#/notes">Back</a>
-  <% if(parseInt(global_user_id) == note.get('user_id') ){ %>
-    <a href="#/notes/<%=note.get('id')%>/edit">Edit</a>
-    <button id="delete" class="btn">Delete</button>
-  <% }; %>
 </div>
