@@ -15,19 +15,32 @@
 $body-bg: #FFFFF0;
 #canvas {display: block;}
 
-.form-horizontal textarea,input{
-  outline:none;
+body{
+  /*background-image: url("/assets/test.png");*/
+}
+
+.form-horizontal textarea, input{
+  outline: none;
   background-color: transparent;
   width: 100%;
+  padding: 10px; 
+}
+
+.form-horizontal input{
+  font-size: 30px;
 }
 
 .form-horizontal p {
   margin: 0 0 2px;
 }
 
-.form-horizontal input{
-  padding: 10px; 
-  font-size: 26px;
+canvas {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
 
 @import "bootstrap";

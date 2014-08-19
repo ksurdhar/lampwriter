@@ -7,7 +7,7 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
   },
 
   events: {
-    "submit form": "submit"
+    "click #submit": "submit"
   },
 
   render: function () {
@@ -32,7 +32,7 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    var params = $(event.currentTarget).serializeJSON();
+    var params = $("#note-form").serializeJSON();
     if(this.id){
       var note = Lampwriter.notes.getOrFetch(this.id);
       note.save(params, {

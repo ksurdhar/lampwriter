@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-      <h2><%= note ? "Edit" : "Create" %> Note</h2>
+      <h3><%= note ? "Edit" : "Create" %> Note</h3> 
       
-      <form class="form-horizontal" role="form">
+      <form id="note-form" class="form-horizontal" role="form">
         <p class="note-title">
-          <input type="text" name="note[title]" placeholder="Title" value= "<%= note ? note.get('title') : '' %>" style="border: 0px solid #000000;">
+          <input type="text" name="note[title]" placeholder="Title" value= "<%= note ? note.get('title') : '' %>" style="border: 0px solid #000000;" autofocus>
         </p>
         
         <p class="note-body">
@@ -15,8 +15,8 @@
           <input type="hidden" name="id" value="<%= note.id %>">
         <% }; %>
         <br>
-        <button type="submit" class="btn">Save</button>
       </form>
+      <button id="submit" type="submit" class="btn">Save</button>
       <!-- <a href="#/notes">Back</a> -->
     </div>
   </div>
