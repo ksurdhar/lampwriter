@@ -13,6 +13,21 @@
  */
 
 $body-bg: #FFFFF0;
+#canvas {display: block;}
 
+.form-horizontal textarea,input{
+  outline:none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.form-horizontal p {
+  margin: 0 0 2px;
+}
+
+.form-horizontal input{
+  padding: 10px; 
+  font-size: 26px;
+}
 
 @import "bootstrap";
