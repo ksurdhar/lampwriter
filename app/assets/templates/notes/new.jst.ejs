@@ -4,13 +4,11 @@
       <h3><%= note ? "Edit" : "Create" %> Note</h3> 
       
       <form id="note-form" class="form-horizontal" role="form">
-        <p class="note-title">
-          <input type="text" name="note[title]" placeholder="Title" value= "<%= note ? note.get('title') : '' %>" style="border: 0px solid #000000;" autofocus>
-        </p>
         
-        <p class="note-body">
-          <textarea name="note[body]" rows="8" cols="40" placeholder="Body" style="border: 0px solid #000000;"><%= note ? note.get('body') : '' %></textarea>
-        </p>
+        <input type="text" name="note[title]" placeholder="Title" value= "<%= note ? note.escape('title') : '' %>" style="border: 0px solid #000000;" autofocus>
+      
+        <textarea name="note[body]" rows="8" cols="40" placeholder="Body" style="border: 0px solid #000000;"><%= note ? note.escape('body') : '' %></textarea>
+        
         <% if(note){ %>
           <input type="hidden" name="id" value="<%= note.id %>">
         <% }; %>

@@ -13,17 +13,17 @@
  */
 
 $body-bg: #FFFFF0;
-#canvas {display: block;}
-
 body{
   /*background-image: url("/assets/test.png");*/
 }
 
-.form-horizontal textarea, input{
+.form-horizontal textarea, 
+.form-horizontal input {
   outline: none;
   background-color: transparent;
   width: 100%;
-  padding: 10px; 
+  padding: 10px;
+  font-family: 'Lora', serif; 
 }
 
 .form-horizontal input{
@@ -33,6 +33,13 @@ body{
 .form-horizontal p {
   margin: 0 0 2px;
 }
+
+.show-note h2,
+.show-note p {
+  font-family: 'Lora', serif;
+}
+
+#canvas {display: block;}
 
 canvas {
   position:absolute;

@@ -1,7 +1,19 @@
-responsive design
-appropriate fonts
+Optimize snow render
 
+modify the show view for notes
+  add html_body to notes
 
+discovery feed
+  public / not public
+
+list users notes under their account
+  adjust show view for non-user
+
+add pages to notes
+
+Font List
+  Lora  
+  EB Garamond
 
 
 gorgeous notebook
@@ -9,7 +21,12 @@ place to share poetry + writing
 light / dark backgrounds using html5 canvas animation
 tagging system for notes
 autosaving text
-email exporting
+myspace top 8
+starring notes
+
+"works" - many pages
+
+
 a dashboard that tracks info
   number of page views
   average time spent per note
