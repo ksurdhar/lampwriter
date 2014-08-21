@@ -34,28 +34,21 @@ $(document).ready(function(){
           backgroundColor: "#2F3238",
           color: "#fff"
         }, 1000 );
+        snowFall();
       } else {
         $( "body" ).animate({
           backgroundColor: "#FFFFF0",
           color: "#000"
         }, 1000 );
+        setTimeout(function(){
+          clearInterval(timer)
+        }, 2000);
       }
       state = !state;
     });
 });
 
-window.onload = snowFall;
-
-function snowFall(speed){
-
-  if (speed > 33) {
-    var renderSpeed = speed;
-  } else{
-    var renderSpeed = 1000;
-  }
-  // debugger
-
-  // canvas init
+function snowFall(){
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
   
@@ -78,9 +71,9 @@ function snowFall(speed){
     })
   }
   
-  //Lets draw the flakes
   function draw()
   {
+    // alert("hello!")
     ctx.clearRect(0, 0, W, H);
     
     ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
@@ -95,8 +88,6 @@ function snowFall(speed){
     update();
   }
   
-  //Function to move the snowflakes
-  //angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
   var angle = 0;
   function update()
   {
@@ -136,7 +127,5 @@ function snowFall(speed){
       }
     }
   }
-  //animation loop
-  timerID = setInterval(draw, 33);
+  timer = setInterval(draw, 33);
 }
-  
