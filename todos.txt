@@ -1,7 +1,6 @@
-Optimize snow render
+Address escaping
+add pikabu
 
-modify the show view for notes
-  add html_body to notes
 
 discovery feed
   public / not public
@@ -10,10 +9,6 @@ list users notes under their account
   adjust show view for non-user
 
 add pages to notes
-
-Font List
-  Lora  
-  EB Garamond
 
 
 gorgeous notebook

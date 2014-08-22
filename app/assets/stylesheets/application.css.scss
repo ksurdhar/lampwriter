@@ -10,11 +10,13 @@
  *
  *= require_self
  *= require_tree .
+ *= require pikabu-theme
+ *= require pikabu
  */
 
-$body-bg: #FFFFF0;
+$body-bg: #FFF;
 body{
-  /*background-image: url("/assets/test.png");*/
+  /*background-image: url("/assets/paper.png");*/
 }
 
 .form-horizontal textarea, 

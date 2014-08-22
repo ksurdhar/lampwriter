@@ -19,6 +19,7 @@
 //= require underscore
 //= require backbone
 //= require lampwriter
+//= require pikabu.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
@@ -27,6 +28,17 @@
 //= require_tree .
 
 $(document).ready(function(){
+  var pikabu = new Pikabu({
+    // Specify left and right sidebar widths independently
+    widths: {
+      left: '30%'
+    }
+  });
+
+  $( "#menu-toggle" ).click(function() {
+    pikabu.openSidebar('left');
+  });
+
   var state = true;
     $( "#toggler" ).click(function() {
       if ( state ) {
@@ -37,12 +49,12 @@ $(document).ready(function(){
         snowFall();
       } else {
         $( "body" ).animate({
-          backgroundColor: "#FFFFF0",
+          backgroundColor: "#FFF",
           color: "#000"
         }, 1000 );
         setTimeout(function(){
           clearInterval(timer)
-        }, 2000);
+        }, 1500);
       }
       state = !state;
     });

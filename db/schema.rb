@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140808042026) do
   create_table "notes", force: true do |t|
     t.string   "title"
     t.text     "body"
+    t.text     "html_body"
     t.boolean  "public"
     t.integer  "user_id"
     t.datetime "created_at"

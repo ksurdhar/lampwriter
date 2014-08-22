@@ -11,8 +11,6 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fcfdf4;
-  color: #6b645c;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -109,13 +107,13 @@ section {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 10px;
-  background: #6b645c;
+  background: transparent;
   color: white;
 }
 
 /* line 153, /Users/ted/dev/pikabu/src/scss/pikabu-theme.scss */
 .m-pikabu-container {
-  background: #fcfdf4;
+  background: transparent;
 }
 
 /* line 157, /Users/ted/dev/pikabu/src/scss/pikabu-theme.scss */
