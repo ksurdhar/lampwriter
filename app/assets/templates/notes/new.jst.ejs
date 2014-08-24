@@ -1,19 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-      <h3>Crafting Mode <span class="saved glyphicon glyphicon-ok"></span> </h3>
-      
+
+      <div class="text-center">
+        <h4>Crafting Mode</h4>
+        <span class="saved glyphicon glyphicon-floppy-disk"></span>
+        <span class="glyphicon glyphicon-trash"></span>
+        <span class="glyphicon glyphicon-remove"></span>
+      </div> 
+
       <form id="note-form" class="form-horizontal" role="form">
-        
         <input type="text" name="note[title]" placeholder="Title" value= "<%= note.escape('title')%>" style="border: 0px solid #000000;" autofocus>
       
         <textarea name="note[body]" rows="16" cols="40" placeholder="Body" style="border: 0px solid #000000;"><%= note.escape('body')%></textarea>
-        
+
         <input type="hidden" name="id" value="<%= note.id %>">
-        <br>
       </form>
-      <button id="submit" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Publish</button>
-      <!-- <a href="#/notes">Back</a> -->
+
+      <div class="text-center">
+        <br><br><br>
+      <button id="submit" type="submit" class="btn btn-default">
+        <span class="glyphicon glyphicon-pencil"></span> Publish</button>
+      </div>
+
     </div>
   </div>
 </div>

@@ -17,6 +17,12 @@
 $body-bg: #FFF;
 body{
   /*background-image: url("/assets/paper.png");*/
+  transition:all 1s;
+}
+
+.dark{
+  background-color: #2F3238;
+  color:#fff;
 }
 
 .side-navigation{

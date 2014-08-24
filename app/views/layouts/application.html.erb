@@ -19,8 +19,6 @@
       <%= link_to "Write", "#/notes/new"  %><br>
       <%= link_to "Account", "#/users/#{current_user.id}" %><br>
       <%= link_to "Leave", destroy_user_session_path, :method => :delete %><br>
-      <button type="button" class="btn btn-default navbar-btn" id="toggler">
-        <span class="glyphicon glyphicon-cog"></span></button>
       <% end %>
     </div>
   </div>
@@ -32,6 +30,8 @@
         <div class="row">
           <button type="button" class="btn btn-default navbar-btn" id="menu-toggle">
             <span class="glyphicon glyphicon-cog"></button>
+          <button type="button" class="btn btn-default navbar-btn" id="toggler">
+            <span class="glyphicon glyphicon-cog"></span></button>
         </div>
       </div>
     <% end %>

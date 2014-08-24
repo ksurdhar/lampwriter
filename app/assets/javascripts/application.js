@@ -42,16 +42,10 @@ $(document).ready(function(){
   var state = true;
     $( "#toggler" ).click(function() {
       if ( state ) {
-        $( "body" ).animate({
-          backgroundColor: "#2F3238",
-          color: "#fff"
-        }, 1000 );
+        $("body").addClass("dark");
         snowFall();
       } else {
-        $( "body" ).animate({
-          backgroundColor: "#FFF",
-          color: "#000"
-        }, 1000 );
+        $("body").removeClass("dark");
         setTimeout(function(){
           clearInterval(timer)
         }, 1500);
