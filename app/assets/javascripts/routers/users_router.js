@@ -9,7 +9,7 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
     "users": "usersIndex",
     "users/:id": "usersShow",
     "notes": "notesIndex",
-    "notes/new": "notesEdit",
+    "notes/new": "notesNew",
     "notes/:id": "notesShow",
     "notes/:id/edit": "notesEdit"
   },
@@ -32,9 +32,24 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  notesNew: function(){
+    $.ajax({
+      url: "/notes",
+      type: 'POST',
+      success: function(newNote) {
+        var note = new Lampwriter.Models.Note(newNote);
+        Lampwriter.notes.add(note);
+        Backbone.history.navigate("#/notes/" + note.id + "/edit", {trigger: true});
+      }
+    });
+  },
+
   notesEdit: function(id){
+    var note = Lampwriter.notes.getOrFetch(id);
+
     var view = new Lampwriter.Views.notesNew({
-      id: id
+      id: id,
+      model: note
     });
     this._swapView(view);
   },

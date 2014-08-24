@@ -31,7 +31,7 @@ $(document).ready(function(){
   var pikabu = new Pikabu({
     // Specify left and right sidebar widths independently
     widths: {
-      left: '30%'
+      left: '20%'
     }
   });
 

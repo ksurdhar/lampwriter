@@ -3,31 +3,44 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
   template: JST["notes/new"],
 
   initialize: function(options) {
+    this.listenTo(this.model, "sync", this.render);
     options.id ? this.id = options.id : this.id = null;
   },
 
   events: {
-    "click #submit": "submit"
+    "click #submit": "submit",
+    "keyup #note-form": "resetSaveTimeout"
   },
 
   render: function () {
-    var that = this;
-    if(this.id){
-      var note = Lampwriter.notes.getOrFetch(this.id);
+    var renderedContent = this.template({
+      note: this.model
+    });
+    this.$el.html(renderedContent);
+    return this;
+  },
 
-      var renderedContent = this.template({
-        note: note
-      });
-      this.$el.html(renderedContent);
-      return this;
-    } 
-    else{
-      var renderedContent = this.template({
-        note: null
-      });
-      this.$el.html(renderedContent);
-      return this;
-    }
+  // displaySave: function(){
+  //   $()
+  // },
+
+  resetSaveTimeout: function(event) {
+    var that = this;
+    // $('#note-edit-group').removeClass('has-success');
+    // $('#note-edit-group').addClass('has-warning');
+    this._timer && clearTimeout(this._timer);
+    this._timer = setTimeout(function() { that.updateBody(event) }, 500);
+  },
+
+  updateBody: function(event) {
+    var that = this;
+    var data = $(event.target).serializeJSON();
+    this.model.save(data, {
+      patch: true,
+      success: function(data) {
+        displaySave();
+      }
+    });
   },
 
   submit: function (event) {

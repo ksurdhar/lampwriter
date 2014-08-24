@@ -1,5 +1,17 @@
 Address escaping
-add pikabu
+
+create toolbar
+  auto-save messages
+  save / close / back 
+  delete
+
+
+publish button at the bottom
+
+
+
+
+
 
 
 discovery feed

@@ -3,6 +3,8 @@ class Note < ActiveRecord::Base
   before_save :set_html_body
 
   def set_html_body
-    self.html_body = body.gsub(/\n/, '<br/>')
+    if self.body
+      self.html_body = body.gsub(/\n/, '<br/>')
+    end
   end
 end

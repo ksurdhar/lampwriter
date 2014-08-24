@@ -12,36 +12,28 @@
 <div class="m-pikabu-viewport">
   <div class="m-pikabu-sidebar m-pikabu-left">
     <!-- left sidebar content -->
-    <h3>Success!</h3>
+    <h3>Navigation</h3>
+    <div class="side-navigation">
+      <% if user_signed_in? %> 
+      <%= link_to "Read", "#/notes"  %><br>
+      <%= link_to "Write", "#/notes/new"  %><br>
+      <%= link_to "Account", "#/users/#{current_user.id}" %><br>
+      <%= link_to "Leave", destroy_user_session_path, :method => :delete %><br>
+      <button type="button" class="btn btn-default navbar-btn" id="toggler">
+        <span class="glyphicon glyphicon-cog"></span></button>
+      <% end %>
+    </div>
   </div>
+
   <div class="m-pikabu-container">
     <% if user_signed_in? %> 
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#/notes">Lampwriter</a>
+      
+      <div class="container">
+        <div class="row">
+          <button type="button" class="btn btn-default navbar-btn" id="menu-toggle">
+            <span class="glyphicon glyphicon-cog"></button>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <p class="navbar-text">Signed in as <%= current_user.email %></p>
-          <button type="button" class="btn btn-default navbar-btn" id="toggler">Toggle</button>
-          <button type="button" class="btn btn-default navbar-btn" id="menu-toggle">Menu</button>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "New Note", "#/notes/new"  %></li>
-            <li><%= link_to "Account", "#/users/#{current_user.id}"  %></li>
-            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+      </div>
     <% end %>
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
