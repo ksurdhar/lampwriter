@@ -17,7 +17,10 @@ class NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.all
+    # @notes = Note.all
+    # @notes = Note.paginate(:page => params[:page], :per_page => 5)
+    #debugger
+    @notes = Note.paginate(:page => params[:current_page], :per_page => params[:page_size])
     render "notes/index"
   end
 

@@ -22,9 +22,9 @@ Lampwriter.Collections.Notes = Backbone.PageableCollection.extend({
 
 window.Lampwriter.notes = new Lampwriter.Collections.Notes([],{
   state: {
-    firstPage: 0,
+    firstPage: 1,
     currentPage: 0,
-    pageSize: 1
+    pageSize: 5
   },
 
   queryParams: {

@@ -6,10 +6,20 @@ Lampwriter.Views.notesIndex = Backbone.View.extend({
     this.listenTo(this.collection, "sync remove change add", this.render);
   },
 
+  events: {
+    "click .next": "nextPage"
+  },
+
   render: function () {
     var renderedContent = this.template({ notes: this.collection });
     this.$el.html(renderedContent);
     return this;
+  },
+
+  nextPage:function(){
+    // debugger
+    this.collection.getNextPage();
+    this.render();
   }
 
 });
