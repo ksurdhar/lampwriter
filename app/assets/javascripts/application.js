@@ -40,7 +40,7 @@ $(document).ready(function(){
   });
 
   var state = true;
-    $( "#toggler" ).click(function() {
+    $( "#snow-toggle" ).click(function() {
       if ( state ) {
         $("body").addClass("dark");
         snowFall();

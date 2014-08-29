@@ -6,8 +6,8 @@ Lampwriter.Views.notesShow = Backbone.View.extend({
     this.listenTo(this.model, "sync remove change", this.render);
   },
 
-  events: {
-    'click #delete': 'deleteNote'
+  events:{
+    "click #publish": "publishNote"
   },
 
   render: function () {
@@ -16,11 +16,14 @@ Lampwriter.Views.notesShow = Backbone.View.extend({
     return this;
   },
 
-  deleteNote: function(){
-    var note = Lampwriter.notes.get(this.model.id);
-    note.destroy({
+  publishNote: function (event) {
+    event.preventDefault();
+    var params = $("#note-form").serializeJSON();
+    var note = Lampwriter.notes.getOrFetch(this.id);
+    note.save(params, {
+      patch: true,
       success: function(params) {
-        Backbone.history.navigate("/notes", { trigger: true });
+        Backbone.history.navigate("/notes/"+note.id, { trigger: true });
       }
     });
   }

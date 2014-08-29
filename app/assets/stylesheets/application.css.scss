@@ -20,9 +20,60 @@ body{
   transition:all 1s;
 }
 
+.index-note a{
+  transition: color .6s;
+}
+.index-note a:link {
+  color:#7f8c8d;
+}
+.index-note a:visited {
+  color:#7f8c8d;
+}
+.index-note a:active {
+  color:#000; 
+}
+.index-note a:hover {
+  color:#000;
+  text-decoration: none !important;
+}
+
+
+@font-face {  
+  font-family: 'illuminate';  
+  src: url("/assets/apexlake.ttf") format("truetype");   
+}
+
+.illuminate{
+  font-family: 'illuminate';
+  font-size: 110px; 
+}  
+
+.note-block{
+/*  width: 300px;
+  height: 180px;*/
+  /*outline: black 4px solid;*/
+  /*padding: 10px;*/
+}
+
+.note-letter{
+  /*float: left;*/
+}
+
+.note-content{
+  font-family: 'Lora';
+  font-size: 30px;
+  vertical-align: 25%; 
+}
+
 .dark{
   background-color: #2F3238;
   color:#fff;
+}
+
+#menu-toggle{
+  font-size: 24px;
+  top: 20px;
+  left: 0px;
 }
 
 .side-navigation{
@@ -46,8 +97,24 @@ body{
   margin: 0 0 2px;
 }
 
-.show-note h2,
-.show-note p {
+.saved{
+  color: #2ecc71;
+}
+.transitioning{
+  transition:all 1s;
+}
+
+.active-glyph{
+  color:#e67e22;
+}
+
+#edit-link{
+  font-size: 15px;
+  padding-left: 5px;
+  vertical-align: 15%; 
+}
+
+.show-note{
   font-family: 'Lora', serif;
 }
 

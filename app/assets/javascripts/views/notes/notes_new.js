@@ -3,16 +3,20 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
   template: JST["notes/new"],
 
   initialize: function(options) {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenToOnce(this.model, "sync", this.render);
     options.id ? this.id = options.id : this.id = null;
   },
 
   events: {
-    "click #submit": "submit",
+    "click #delete-note": "deleteNote",
+    "click #go-back": "goBack",
     "keyup #note-form": "resetSaveTimeout"
   },
 
   render: function () {
+    if (this.model.escape("title") == "Untitled"){
+      this.model.set("title", "");
+    }
     var renderedContent = this.template({
       note: this.model
     });
@@ -20,16 +24,29 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
     return this;
   },
 
-  // displaySave: function(){
-  //   $()
-  // },
+  deleteNote: function(){
+    var note = Lampwriter.notes.get(this.model.id);
+    note.destroy({
+      success: function(params) {
+        Backbone.history.navigate("/notes", { trigger: true });
+      }
+    });
+  },
+
+  displaySave: function(){
+    $("#save-icon").addClass("saved transitioning");
+    setTimeout(function(){ $("#save-icon").removeClass("saved") }, 2000);
+    setTimeout(function(){ $("#save-icon").removeClass("transitioning") }, 4500);
+  },
+
+  goBack: function(){
+    Backbone.history.navigate("/notes/"+this.id, { trigger: true });
+  },
 
   resetSaveTimeout: function(event) {
     var that = this;
-    // $('#note-edit-group').removeClass('has-success');
-    // $('#note-edit-group').addClass('has-warning');
     this._timer && clearTimeout(this._timer);
-    this._timer = setTimeout(function() { that.updateBody(event) }, 500);
+    this._timer = setTimeout(function() { that.updateBody(event) }, 1500);
   },
 
   updateBody: function(event) {
@@ -38,31 +55,10 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
     this.model.save(data, {
       patch: true,
       success: function(data) {
-        displaySave();
+        that.displaySave();
       }
     });
   },
 
-  submit: function (event) {
-    event.preventDefault();
-    var params = $("#note-form").serializeJSON();
-    if(this.id){
-      var note = Lampwriter.notes.getOrFetch(this.id);
-      note.save(params, {
-        patch: true,
-        success: function(params) {
-          Backbone.history.navigate("/notes/"+note.id, { trigger: true });
-        }
-      });
-    } 
-    else{
-      var newNote = new Lampwriter.Models.Note(params);
-      newNote.save({}, {
-        success: function () {
-          Lampwriter.notes.add(newNote);
-          Backbone.history.navigate("/notes/"+newNote.id, { trigger: true });
-        }
-      });
-    }
-  }
+  
 });

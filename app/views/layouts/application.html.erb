@@ -12,7 +12,7 @@
 <div class="m-pikabu-viewport">
   <div class="m-pikabu-sidebar m-pikabu-left">
     <!-- left sidebar content -->
-    <h3>Navigation</h3>
+    <h3>Lampwriter</h3>
     <div class="side-navigation">
       <% if user_signed_in? %> 
       <%= link_to "Read", "#/notes"  %><br>
@@ -25,19 +25,19 @@
 
   <div class="m-pikabu-container">
     <% if user_signed_in? %> 
-      
       <div class="container">
         <div class="row">
-          <button type="button" class="btn btn-default navbar-btn" id="menu-toggle">
-            <span class="glyphicon glyphicon-cog"></button>
-          <button type="button" class="btn btn-default navbar-btn" id="toggler">
-            <span class="glyphicon glyphicon-cog"></span></button>
+          <div class="col-sm-1">
+            <span id="menu-toggle"><span class="glyphicon glyphicon-cog"></span></span>
+          </div>
         </div>
       </div>
     <% end %>
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
     <%= yield %>
+    <br><br><br><br>
+    <div class="text-center"><span id="snow-toggle"><span class="glyphicon glyphicon-flash"></span></span></div>
   </div>
 </div>
 <canvas id="canvas"></canvas>

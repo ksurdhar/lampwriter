@@ -1,27 +1,32 @@
-Address escaping
-
-create toolbar
-  auto-save messages
-  save / close / back 
-  delete
-
-
-publish button at the bottom
-
-
-
-
-
+finish feed
+  add pagination
+  add style
+  //HACK: add author attribute to note
+note publishing
+redo menu
+add stars / likes / hearts
+user profiles 
+  list their notes
+  notes they like
+  top 3 users - form a house [NOT MVP]
+html escaping
 
 
-discovery feed
-  public / not public
 
-list users notes under their account
-  adjust show view for non-user
+Information to display:
+Title 
+Author
+Date Published
+Number of Likes / Stars
+Estimated read time or short / long
 
-add pages to notes
+filters: most recent (default) most popular
 
+buttons: http://anthonydupont.be/lab/ShuffleText/
+Proxima-Nova font - all caps
+"Read More"
+
+text resizing - http://trevordavis.net/play/jquery-text-resizer/
 
 gorgeous notebook
 place to share poetry + writing
@@ -48,6 +53,9 @@ note
   title
   body
   public
+    author
+    edited?
+    long/short
 
 Steps I take to add a model:
   generate migration, rake db:migrate
