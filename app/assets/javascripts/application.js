@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
+//= require backbone.paginator.min
 //= require lampwriter
 //= require pikabu.js
 //= require_tree ../templates

@@ -1,4 +1,4 @@
-Lampwriter.Collections.Notes = Backbone.Collection.extend({
+Lampwriter.Collections.Notes = Backbone.PageableCollection.extend({
   url: "notes",
   model: Lampwriter.Models.Note,
 
@@ -20,4 +20,15 @@ Lampwriter.Collections.Notes = Backbone.Collection.extend({
 
 });
 
-window.Lampwriter.notes = new Lampwriter.Collections.Notes();
+window.Lampwriter.notes = new Lampwriter.Collections.Notes([],{
+  state: {
+    firstPage: 0,
+    currentPage: 0,
+    pageSize: 1
+  },
+
+  queryParams: {
+    currentPage: "current_page",
+    pageSize: "page_size"
+  }
+});
