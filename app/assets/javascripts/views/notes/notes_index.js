@@ -17,9 +17,7 @@ Lampwriter.Views.notesIndex = Backbone.View.extend({
   },
 
   nextPage:function(){
-    // debugger
     this.collection.getNextPage();
-    this.render();
   }
 
 });

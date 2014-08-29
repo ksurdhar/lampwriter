@@ -17,13 +17,12 @@ Lampwriter.Collections.Notes = Backbone.PageableCollection.extend({
       return note
     }
   }
-
 });
 
 window.Lampwriter.notes = new Lampwriter.Collections.Notes([],{
   state: {
     firstPage: 1,
-    currentPage: 0,
+    currentPage: 1,
     pageSize: 5
   },
 

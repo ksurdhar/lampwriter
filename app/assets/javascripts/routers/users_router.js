@@ -15,7 +15,7 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
   },
 
   notesIndex: function(){
-    Lampwriter.notes.getFirstPage();
+    Lampwriter.notes.getPage(Lampwriter.notes.state["currentPage"]);
 
     var view = new Lampwriter.Views.notesIndex({
       collection: Lampwriter.notes
