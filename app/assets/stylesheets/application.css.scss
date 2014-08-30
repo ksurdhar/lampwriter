@@ -16,8 +16,11 @@
 
 
 /*COLOR PALETTE*/
-$gold: #FFA200;
-$pale-yellow: #FFD464;
+$gold: #F9BF3B;
+$pale-yellow: #FDE3A7;
+$royal-purple: #674172;
+$ghost: #DADFE1;
+$solid-ghost: #7f8c8d;
 
 
 $body-bg: #FFF;
@@ -42,16 +45,16 @@ body{
   transition: color .75s;
 }
 .index-note a:link {
-  color:#7f8c8d;
+  color: $solid-ghost;
 }
 .index-note a:visited {
-  color:#7f8c8d;
+  color: $ghost;
 }
 .index-note a:active {
   color:#000; 
 }
 .index-note a:hover {
-  color:$gold;
+  color: black;
   text-decoration: none !important;
 }
 

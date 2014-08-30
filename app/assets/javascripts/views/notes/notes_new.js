@@ -58,7 +58,5 @@ Lampwriter.Views.notesNew = Backbone.View.extend({
         that.displaySave();
       }
     });
-  },
-
-  
+  },  
 });

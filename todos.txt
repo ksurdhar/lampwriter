@@ -1,9 +1,10 @@
 finish feed
-  //HACK: add author attribute to note
-  add sorting
-
+  //HACK: add author and star_count attribute to note
+  //have navigation buttons always there, just not always active
 note publishing
-new menu
+new menu - drop down nav
+
+
 add stars / likes / hearts
 user profiles 
   list their notes
@@ -12,6 +13,7 @@ user profiles
 html escaping
 maintain pagination state - bootstrapping data
 
+add proxima font
 
 
 filters: most recent (default) most popular

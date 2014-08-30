@@ -17,7 +17,11 @@ class NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.paginate(:page => params[:current_page], :per_page => params[:page_size])
+    if params[:sort_by] == "title"
+      @notes = Note.paginate(:page => params[:current_page], :per_page => params[:page_size]).order(params[:sort_by] => :asc)
+    else
+      @notes = Note.paginate(:page => params[:current_page], :per_page => params[:page_size]).order(:created_at => :desc)
+    end
     render "notes/index"
   end
 
