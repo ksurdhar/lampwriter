@@ -20,6 +20,7 @@
 //= require backbone
 //= require backbone.paginator.min
 //= require lampwriter
+//= require jquery.age
 //= require pikabu.js
 //= require_tree ../templates
 //= require_tree ./models

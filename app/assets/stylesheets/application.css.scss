@@ -14,10 +14,28 @@
  *= require pikabu
  */
 
+
+/*COLOR PALETTE*/
+$gold: #FFA200;
+$pale-yellow: #FFD464;
+
+
 $body-bg: #FFF;
 body{
   /*background-image: url("/assets/paper.png");*/
   transition:all 1s;
+}
+
+.index-whole:hover > .index-info {
+  color:#7f8c8d;
+}
+
+.index-info{
+  transition:color .75s;
+  color:#fff;
+  text-align: right;
+  vertical-align: middle;
+  padding-top: 45px; 
 }
 
 .index-note a{
@@ -33,7 +51,7 @@ body{
   color:#000; 
 }
 .index-note a:hover {
-  color:#000;
+  color:$gold;
   text-decoration: none !important;
 }
 

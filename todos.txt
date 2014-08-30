@@ -1,24 +1,18 @@
 finish feed
-  add pagination
-  add style
   //HACK: add author attribute to note
+  add sorting
+
 note publishing
-redo menu
+new menu
 add stars / likes / hearts
 user profiles 
   list their notes
   notes they like
   top 3 users - form a house [NOT MVP]
 html escaping
+maintain pagination state - bootstrapping data
 
 
-
-Information to display:
-Title 
-Author
-Date Published
-Number of Likes / Stars
-Estimated read time or short / long
 
 filters: most recent (default) most popular
 

@@ -4,4 +4,6 @@
   <% if current_user %>
     global_user_id = "<%= current_user.id %>"
   <% end %>
+  allNotes = new Lampwriter.Collections.Notes();
+  allNotes.fetch();
 </script>

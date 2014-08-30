@@ -39,6 +39,7 @@ Lampwriter.Routers.Users = Backbone.Router.extend({
       success: function(newNote) {
         var note = new Lampwriter.Models.Note(newNote);
         Lampwriter.notes.add(note);
+        allNotes.add(note);
         Backbone.history.navigate("#/notes/" + note.id + "/edit", {trigger: true});
       }
     });
